@@ -22,6 +22,9 @@ class ImportTransactionsService {
     const transactions: Transaction[] = [];
     const createTransactionService = new CreateTransactionService();
 
+    // TODO ( MELHORAR PROCESSO PARA INSEIR EM MASSA )
+    // NÃO UTILIZAR A REGRA DE NEGÓCIO DO SERVISE - createTransactionService
+
     for (const item of transactionscsv) {
       const transaction = await createTransactionService.execute(item);
       transactions.push(transaction);
